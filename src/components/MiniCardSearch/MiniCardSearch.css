@@ -1,0 +1,41 @@
+.card {
+  background-color: white;
+  border: 1px solid #c4c4c4;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card img {
+  object-fit: cover;
+  object-position: center;
+  height: 140px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(51, 51, 51);
+  line-height: 12px;
+  margin-top: 12px;
+}
+
+.green {
+  border-bottom: seagreen solid 5px;
+}
+
+.red {
+  border-bottom: orangered solid 5px;
+}
+
+.purple {
+  border-bottom: purple solid 5px;
+}
+
+.brown {
+  border-bottom: brown solid 5px;
+}
