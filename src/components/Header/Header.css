@@ -1,0 +1,12 @@
+header {
+  height: 80px;
+}
+header .wrapper {
+  margin: 0 50px;
+}
+header .logo {
+  width: 220px;
+}
+header nav {
+  border-bottom: green solid 3px;
+}
