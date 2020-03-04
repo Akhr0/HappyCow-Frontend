@@ -1,9 +1,18 @@
+.search {
+  position: absolute;
+  top: 80px;
+  height: calc(100vh-80px);
+}
+
 .search .results {
   width: 50%;
+  height: calc(100vh - 80px);
+  overflow: scroll;
 }
 
 .search .map {
   width: 50%;
+  height: calc(100vh - 80px);
   background-image: url("https://i.stack.imgur.com/8ZOGS.jpg");
 }
 
@@ -16,4 +25,23 @@
   width: 33%;
   padding: 0 15px;
   margin-bottom: 10px;
+}
+
+.infos-map {
+  width: 70px;
+  height: 80px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  position: absolute;
+  top: -145px;
+  left: -45px;
+  border-radius: 5px;
+  text-align: center;
+  display: none;
+}
+
+.infos-map h1 {
+  font-weight: bold;
+  color: green;
 }

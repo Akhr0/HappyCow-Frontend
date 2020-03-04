@@ -6,12 +6,15 @@
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  align-items: center;
+  cursor: pointer;
 }
 
 .card img {
   object-fit: cover;
   object-position: center;
   height: 140px;
+  width: 100%;
 }
 
 .card h2 {
@@ -24,18 +27,118 @@
   margin-top: 12px;
 }
 
+.card .icon-star,
+.card .icon-dollar {
+  margin: 0 1.5px;
+  color: rgb(255, 215, 0);
+}
+
+.card .icon-star-grey,
+.card .icon-dollar-grey {
+  margin: 0 1.5px;
+  color: rgb(179, 179, 179);
+}
+
+.card .icon-star,
+.card .icon-star-grey {
+  font-size: 0.9rem;
+}
+
+.card .icon-dollar,
+.card .icon-dollar-grey,
+.card .icon-dollar-empty {
+  font-size: 1.3rem;
+}
+
+.card .icon-dollar-empty {
+  margin: 0 1.5px;
+  color: rgb(216, 216, 216);
+}
+
+.card .rating {
+  margin-top: 10px;
+}
+
+.card .price {
+  margin-top: 10px;
+}
+
 .green {
   border-bottom: seagreen solid 5px;
+  position: relative;
 }
 
 .red {
   border-bottom: orangered solid 5px;
+  position: relative;
 }
 
 .purple {
   border-bottom: purple solid 5px;
+  position: relative;
 }
 
 .brown {
-  border-bottom: brown solid 5px;
+  border-bottom: rgb(165, 116, 42) solid 5px;
+  position: relative;
+}
+
+.ogreen {
+  background-color: rgba(46, 139, 87, 0.9);
+}
+.ored {
+  background-color: rgba(255, 69, 0, 0.9);
+}
+.opurple {
+  background-color: rgba(128, 0, 128, 0.9);
+}
+.obrown {
+  background-color: rgba(165, 116, 42, 0.9);
+}
+
+.card .over-wrapper {
+  width: 80%;
+}
+
+.card .overlay-card {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.card .overlay-card:hover {
+  opacity: 1;
+}
+
+.card .overlay-card h4 {
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+
+.card .overlay-card h5 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.card .overlay-card img {
+  height: 60px;
+  margin-top: 30px;
+  object-fit: contain;
+}
+
+.card .overlay-card p {
+  margin-top: 15px;
+  font-size: 1rem;
 }
