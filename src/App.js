@@ -5,12 +5,17 @@ import Home from "./pages/Home/Home";
 import Search from "./pages/Search/Search";
 import "./assets/css/reset.css";
 import "./assets/css/App.css";
+import Restaurant from "./pages/Restaurant/Restaurant";
+require("dotenv").config();
 
 function App() {
   return (
     <Router>
       <Header />
       <Switch>
+        <Route exact path="/restaurant/:restoId">
+          <Restaurant />
+        </Route>
         <Route exact path="/search/:search/:page?">
           <Search />
         </Route>

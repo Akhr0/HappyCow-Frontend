@@ -1,0 +1,46 @@
+.search-box > span {
+  margin-top: 15px;
+}
+
+.search-box {
+  padding: 0 20px;
+}
+
+.search-box input:first-child {
+  height: 40px;
+  border: 1px rgb(216, 216, 216) solid;
+  margin-top: 15px;
+  border-radius: 20px;
+  padding-left: 20px;
+  outline: none;
+  font-size: 1.6rem;
+}
+
+.search-box input:nth-child(2) {
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  border: 2px rgba(216, 216, 216, 0) solid;
+  margin-top: 15px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1.6rem;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  background-color: rgb(4, 110, 0);
+  cursor: pointer;
+}
+
+.search-box input:nth-child(2):hover {
+  border: 2px rgb(4, 110, 0) solid;
+  background-color: white;
+  color: rgb(4, 110, 0);
+}
+
+.search-box .search-btn {
+  height: 40px;
+  width: 150px;
+  border: 1px rgb(219, 219, 219) solid;
+  font-size: 1.8rem;
+  margin-left: 10px;
+}

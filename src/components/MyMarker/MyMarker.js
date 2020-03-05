@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Marker, OverlayView } from "@react-google-maps/api";
 import "./MyMarker.css";
 
@@ -22,13 +22,10 @@ const MyMarker = ({ resto }) => {
         "https://d1mvj2ulps5lli.cloudfront.net/map_marker/health_store_marker.svg";
   }
 
-  // const [icon, setIcon] = useState(
-  //   "https://d1mvj2ulps5lli.cloudfront.net/map_marker/vegan_marker.svg"
-  // );
-
   return (
     <Marker
       key={"mark" + resto._id}
+      animation={window.google.maps.Animation.DROP}
       position={{
         lat: Number(resto.location.lat),
         lng: Number(resto.location.lng)
@@ -42,11 +39,6 @@ const MyMarker = ({ resto }) => {
         elem.style.display = "none";
       }}
       icon={icon}
-      // onClick={() => {
-      //   setIcon(
-      //     "https://d1mvj2ulps5lli.cloudfront.net/map_marker/vegetarian_marker.svg"
-      //   );
-      // }}
     >
       <OverlayView
         className="infos-anchor"

@@ -1,6 +1,6 @@
 .card {
   background-color: white;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #eeeeee;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -8,6 +8,14 @@
   box-sizing: border-box;
   align-items: center;
   cursor: pointer;
+  border-radius: 7px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .card img {
@@ -15,6 +23,7 @@
   object-position: center;
   height: 140px;
   width: 100%;
+  border-radius: 7px 7px 0 0;
 }
 
 .card h2 {
@@ -115,6 +124,7 @@
   opacity: 0;
   transition-duration: 0.5s;
   transition-timing-function: ease;
+  border-radius: 7px 7px 0 0;
 }
 
 .card .overlay-card:hover {

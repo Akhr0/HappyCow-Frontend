@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MiniCardSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -177,7 +177,14 @@ const MiniCardSearch = ({
           <p>{adress}</p>
         </div>
       </div>
-      <img src={pictures[0]} alt={name} />
+      <img
+        src={
+          pictures[0]
+            ? pictures[0]
+            : "https://www.labaleine.fr/sites/baleine/files/image-not-found.jpg"
+        }
+        alt={name}
+      />
       <h2>{name}</h2>
       <div className="rating">{stars}</div>
       <div className="price">{dollars}</div>
