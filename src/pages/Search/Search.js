@@ -51,20 +51,23 @@ const Search = props => {
             type.store
         );
 
-        // Create Markers
+        // Create Markers declaration func
         const getMarkers = datas => {
           return datas.restaurants.map((resto, index) => {
             return <MyMarker key={Math.random()} resto={resto} />;
           });
         };
 
-        const marks = await getMarkers(response.data);
+        // Create markers launch func
+        const marks = await getMarkers(response.data.result);
+
         // Set all other States
-        setSearchResult(response.data);
+        setSearchResult(response.data.result);
         setIsLoading(false);
         setMarkers(marks);
         setError(false);
       } catch (error) {
+        // In case of error from server
         setError(true);
         setIsLoading(false);
         setMarkers([]);
