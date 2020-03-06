@@ -36,21 +36,14 @@
   margin-top: 12px;
 }
 
-.card .icon-star,
 .card .icon-dollar {
   margin: 0 1.5px;
   color: rgb(255, 215, 0);
 }
 
-.card .icon-star-grey,
 .card .icon-dollar-grey {
   margin: 0 1.5px;
   color: rgb(179, 179, 179);
-}
-
-.card .icon-star,
-.card .icon-star-grey {
-  font-size: 0.9rem;
 }
 
 .card .icon-dollar,
@@ -62,10 +55,6 @@
 .card .icon-dollar-empty {
   margin: 0 1.5px;
   color: rgb(216, 216, 216);
-}
-
-.card .rating {
-  margin-top: 10px;
 }
 
 .card .price {
@@ -151,4 +140,11 @@
 .card .overlay-card p {
   margin-top: 15px;
   font-size: 1rem;
+}
+
+.card .rating {
+  width: 25%;
+  box-sizing: border-box;
+  justify-content: center;
+  margin-top: 10px;
 }

@@ -44,3 +44,10 @@
   font-size: 1.8rem;
   margin-left: 10px;
 }
+
+.search-box .limit {
+  margin-top: 15px;
+  height: 40px;
+  width: 150px;
+  font-size: 1.2rem;
+}

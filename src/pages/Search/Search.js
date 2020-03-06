@@ -6,12 +6,15 @@ import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import MyMarker from "../../components/MyMarker/MyMarker";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import ResultList from "../../components/ResultList/ResultList";
+import Pagination from "../../components/Pagination/Pagination";
 
 // SEARCH PAGE ##############################################
 
 const Search = props => {
   const { search, page } = useParams();
-  let idPage;
+  let pageNum;
+  page ? (pageNum = page) : (pageNum = 1);
+
   const typeStart = {
     vegan: 0,
     vegetarian: 0,
@@ -19,12 +22,9 @@ const Search = props => {
     store: 0
   };
 
-  page ? (idPage = page) : (idPage = 1);
-
   const [searchResult, setSearchResult] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [numPage] = useState(idPage);
-  const [limit] = useState(30);
+  const [limit, setLimit] = useState(30);
   const [markers, setMarkers] = useState([]);
   const [type, setType] = useState(typeStart);
   const [error, setError] = useState(false);
@@ -40,7 +40,7 @@ const Search = props => {
             "&limit=" +
             limit +
             "&page=" +
-            numPage +
+            pageNum +
             "&vegan=" +
             type.vegan +
             "&vege=" +
@@ -77,7 +77,7 @@ const Search = props => {
       }
     };
     fetchData();
-  }, [search, type, limit, numPage]);
+  }, [search, type, limit, pageNum]);
 
   // DISPLAY ####################################
   return (
@@ -92,8 +92,26 @@ const Search = props => {
               city={search}
               setType={setType}
               type={type}
+              setLimit={setLimit}
+              currentSearch={search}
             />
+            <div className="d-flex jcc w100 pagination">
+              <Pagination
+                postsPerPage={limit}
+                totalPosts={searchResult.count}
+                city={search}
+                pageNum={pageNum}
+              />
+            </div>
             <ResultList searchResult={searchResult} error={error} />
+            <div className="d-flex jcc w100 pagination">
+              <Pagination
+                postsPerPage={limit}
+                totalPosts={searchResult.count}
+                city={search}
+                pageNum={pageNum}
+              />
+            </div>
           </>
         )}
       </div>

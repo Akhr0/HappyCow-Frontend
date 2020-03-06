@@ -3,7 +3,7 @@ import "./SearchBox.css";
 import Button from "../Button/Button";
 import { useHistory } from "react-router-dom";
 
-const SearchBox = ({ count, city, setType, type }) => {
+const SearchBox = ({ count, city, setType, type, setLimit, currentSearch }) => {
   // Creation variable history
   const history = useHistory();
 
@@ -37,6 +37,19 @@ const SearchBox = ({ count, city, setType, type }) => {
         <Button setType={setType} type={type} currentType="vegetarian" />
         <Button setType={setType} type={type} currentType="vegOptions" />
         <Button setType={setType} type={type} currentType="store" />
+        <select
+          id="results-number"
+          className="limit out-none"
+          onChange={e => {
+            setLimit(e.target.value);
+            history.push("/search/" + currentSearch + "/1");
+          }}
+        >
+          <option value="30">--Résultats par page--</option>
+          <option value="10">10</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+        </select>
       </div>
       <hr />
     </div>

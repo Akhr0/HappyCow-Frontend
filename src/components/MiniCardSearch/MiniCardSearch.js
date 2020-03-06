@@ -1,12 +1,9 @@
 import React from "react";
 import "./MiniCardSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStar,
-  faStarHalfAlt,
-  faDollarSign
-} from "@fortawesome/free-solid-svg-icons";
-import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
+import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from "react-router-dom";
+import RatingStars from "../RatingStars/RatingStars";
 
 const MiniCardSearch = ({
   pictures,
@@ -20,6 +17,8 @@ const MiniCardSearch = ({
   let borderStyle;
   let overlayStyle;
   let picto;
+  let dollars;
+  const history = useHistory();
 
   switch (type) {
     case "vegan":
@@ -43,50 +42,8 @@ const MiniCardSearch = ({
       picto = "https://www.happycow.net/img/category/category_health-store.svg";
   }
 
-  // RATING STARS
-  let stars = [];
-  if (rating) {
-    for (let i = 0; i < Math.floor(rating); i++) {
-      stars.push(
-        <FontAwesomeIcon
-          icon={faStar}
-          className="icon-star"
-          key={Math.random()}
-        />
-      );
-    }
-    if (Math.floor(rating) < rating) {
-      stars.push(
-        <FontAwesomeIcon
-          icon={faStarHalfAlt}
-          className="icon-star"
-          key={Math.random()}
-        />
-      );
-    }
-    while (stars.length < 5) {
-      stars.push(
-        <FontAwesomeIcon
-          icon={faStarEmpty}
-          className="icon-star"
-          key={Math.random()}
-        />
-      );
-    }
-  } else {
-    while (stars.length < 5) {
-      stars.push(
-        <FontAwesomeIcon
-          icon={faStarEmpty}
-          className="icon-star-grey"
-          key={Math.random()}
-        />
-      );
-    }
-  }
-
   //PRICE
-  let dollars;
+
   switch (price) {
     case "Inexpensive":
       dollars = [
@@ -167,7 +124,12 @@ const MiniCardSearch = ({
 
   //DISPLAY
   return (
-    <div className={borderStyle}>
+    <div
+      className={borderStyle}
+      onClick={() => {
+        history.push("/restaurant/" + _id);
+      }}
+    >
       <div className={overlayStyle} id={"card" + _id}>
         <div className="over-wrapper">
           <img src={picto} alt="picto" />
@@ -186,7 +148,9 @@ const MiniCardSearch = ({
         alt={name}
       />
       <h2>{name}</h2>
-      <div className="rating">{stars}</div>
+      <RatingStars num={rating} />
+
+      {/* <div className="rating">{stars}</div> */}
       <div className="price">{dollars}</div>
     </div>
   );
