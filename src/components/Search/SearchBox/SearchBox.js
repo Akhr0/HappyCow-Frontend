@@ -33,10 +33,30 @@ const SearchBox = ({ count, city, setType, type, setLimit, currentSearch }) => {
         <input type="submit" className="search-btn" />
       </form>
       <div className="d-flex aic">
-        <Button setType={setType} type={type} currentType="vegan" />
-        <Button setType={setType} type={type} currentType="vegetarian" />
-        <Button setType={setType} type={type} currentType="veg-options" />
-        <Button setType={setType} type={type} />
+        <Button
+          setType={setType}
+          type={type}
+          currentType="vegan"
+          currentSearch={currentSearch}
+        />
+        <Button
+          setType={setType}
+          type={type}
+          currentType="vegetarian"
+          currentSearch={currentSearch}
+        />
+        <Button
+          setType={setType}
+          type={type}
+          currentType="veg-options"
+          currentSearch={currentSearch}
+        />
+        <Button
+          setType={setType}
+          type={type}
+          currentType="store"
+          currentSearch={currentSearch}
+        />
         <select
           id="results-number"
           className="limit out-none"
@@ -45,10 +65,10 @@ const SearchBox = ({ count, city, setType, type, setLimit, currentSearch }) => {
             history.push("/search/" + currentSearch + "/1");
           }}
         >
-          <option value="30">--Résultats par page--</option>
-          <option value="10">10</option>
+          <option value="30">Résultats / page</option>
+          <option value="15">15</option>
           <option value="30">30</option>
-          <option value="50">50</option>
+          <option value="60">60</option>
         </select>
       </div>
       <hr />

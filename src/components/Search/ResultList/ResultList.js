@@ -4,7 +4,7 @@ import MiniCardSearch from "../MiniCardSearch/MiniCardSearch";
 
 const ResultList = ({ error, searchResult }) => {
   const content = error ? (
-    <div>{searchResult.message}</div>
+    <div className="d-flex jcc w100 error-msg">{searchResult.message}</div>
   ) : (
     <ul className="list d-flex w100">
       {searchResult.restaurants.map((restaurant, index) => {

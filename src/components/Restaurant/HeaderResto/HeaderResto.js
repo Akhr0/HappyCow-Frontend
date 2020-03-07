@@ -17,10 +17,6 @@ const HeaderResto = ({ name, rating, type, premium }) => {
                 <span>FRIEND</span>
               </div>
             ) : null}
-            {/* <div className="premium d-flex aic">
-              <FontAwesomeIcon icon="award" className="icon" />
-              <span>FRIEND</span>
-            </div> */}
             <Button currentType={type} />
             <RatingStars num={rating} />
           </div>

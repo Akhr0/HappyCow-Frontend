@@ -18,7 +18,7 @@ const Search = props => {
   const typeStart = {
     vegan: 0,
     vegetarian: 0,
-    vegOptions: 0,
+    "veg-options": 0,
     store: 0
   };
 
@@ -46,7 +46,7 @@ const Search = props => {
             "&vege=" +
             type.vegetarian +
             "&vo=" +
-            type.vegOptions +
+            type["veg-options"] +
             "&store=" +
             type.store
         );
@@ -72,7 +72,7 @@ const Search = props => {
         setIsLoading(false);
         setMarkers([]);
         setSearchResult({
-          message: "Cette ville ne semble pas référencée sur notre site"
+          message: "Nous ne trouvons aucun résultat pour cette recherche"
         });
       }
     };
@@ -95,7 +95,7 @@ const Search = props => {
               setLimit={setLimit}
               currentSearch={search}
             />
-            <div className="d-flex jcc w100 pagination">
+            <div className={error ? "d-none" : "d-flex jcc w100 pagination"}>
               <Pagination
                 postsPerPage={limit}
                 totalPosts={searchResult.count}
@@ -104,7 +104,7 @@ const Search = props => {
               />
             </div>
             <ResultList searchResult={searchResult} error={error} />
-            <div className="d-flex jcc w100 pagination">
+            <div className={error ? "d-none" : "d-flex jcc w100 pagination"}>
               <Pagination
                 postsPerPage={limit}
                 totalPosts={searchResult.count}

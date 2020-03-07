@@ -53,3 +53,7 @@ body {
 .sbw {
   justify-content: space-between;
 }
+
+.d-none {
+  display: none;
+}

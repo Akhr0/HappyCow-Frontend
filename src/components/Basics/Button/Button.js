@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Button.css";
+import { useHistory } from "react-router-dom";
 
-const Button = ({ currentType, type, setType }) => {
+const Button = ({ currentType, type, setType, currentSearch }) => {
+  const history = useHistory();
   const [select, setSelect] = useState(false);
   let color;
   let name;
@@ -45,20 +47,22 @@ const Button = ({ currentType, type, setType }) => {
             const obj = {
               vegan: type.vegan,
               vegetarian: type.vegetarian,
-              vegOptions: type.vegOptions,
+              "veg-options": type["veg-options"],
               store: type.store
             };
             obj[currentType] = 1;
             setType(obj);
+            history.push("/search/" + currentSearch + "/1");
           } else {
             const obj = {
               vegan: type.vegan,
               vegetarian: type.vegetarian,
-              vegOptions: type.vegOptions,
+              "veg-options": type["veg-options"],
               store: type.store
             };
             obj[currentType] = 0;
             setType(obj);
+            history.push("/search/" + currentSearch + "/1");
           }
           setSelect(!select);
         }
