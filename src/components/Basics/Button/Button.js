@@ -18,21 +18,15 @@ const Button = ({ currentType, type, setType }) => {
       name = "Vegetarian";
       picto = "https://www.happycow.net/img/category/category_vegetarian.svg";
       break;
-    case "vegOptions":
+    case "veg-options":
       color = "red";
       name = "Veg-Options";
       picto = "https://www.happycow.net/img/category/category_veg-options.svg";
       break;
-    case "store":
+    default:
       color = "brown";
       name = "Store";
       picto = "https://www.happycow.net/img/category/category_health-store.svg";
-      break;
-    default:
-      color = "brown";
-      name = "Unknown";
-      picto =
-        "https://www.labaleine.fr/sites/baleine/files/image-not-found.jpg";
       break;
   }
 
@@ -45,27 +39,29 @@ const Button = ({ currentType, type, setType }) => {
           : "Btn d-flex aic jcc"
       }
       onClick={e => {
-        e.preventDefault();
-        if (select === false) {
-          const obj = {
-            vegan: type.vegan,
-            vegetarian: type.vegetarian,
-            vegOptions: type.vegOptions,
-            store: type.store
-          };
-          obj[currentType] = 1;
-          setType(obj);
-        } else {
-          const obj = {
-            vegan: type.vegan,
-            vegetarian: type.vegetarian,
-            vegOptions: type.vegOptions,
-            store: type.store
-          };
-          obj[currentType] = 0;
-          setType(obj);
+        if (setType) {
+          e.preventDefault();
+          if (select === false) {
+            const obj = {
+              vegan: type.vegan,
+              vegetarian: type.vegetarian,
+              vegOptions: type.vegOptions,
+              store: type.store
+            };
+            obj[currentType] = 1;
+            setType(obj);
+          } else {
+            const obj = {
+              vegan: type.vegan,
+              vegetarian: type.vegetarian,
+              vegOptions: type.vegOptions,
+              store: type.store
+            };
+            obj[currentType] = 0;
+            setType(obj);
+          }
+          setSelect(!select);
         }
-        setSelect(!select);
       }}
     >
       <img src={picto} alt="picto" />

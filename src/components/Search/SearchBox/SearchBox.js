@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SearchBox.css";
-import Button from "../Button/Button";
+import Button from "../../Basics/Button/Button";
 import { useHistory } from "react-router-dom";
 
 const SearchBox = ({ count, city, setType, type, setLimit, currentSearch }) => {
@@ -32,11 +32,11 @@ const SearchBox = ({ count, city, setType, type, setLimit, currentSearch }) => {
         />
         <input type="submit" className="search-btn" />
       </form>
-      <div className="d-flex">
+      <div className="d-flex aic">
         <Button setType={setType} type={type} currentType="vegan" />
         <Button setType={setType} type={type} currentType="vegetarian" />
-        <Button setType={setType} type={type} currentType="vegOptions" />
-        <Button setType={setType} type={type} currentType="store" />
+        <Button setType={setType} type={type} currentType="veg-options" />
+        <Button setType={setType} type={type} />
         <select
           id="results-number"
           className="limit out-none"

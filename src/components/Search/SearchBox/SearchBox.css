@@ -10,6 +10,7 @@
   height: 40px;
   border: 1px rgb(216, 216, 216) solid;
   margin-top: 15px;
+  margin-bottom: 20px;
   border-radius: 20px;
   padding-left: 20px;
   outline: none;
@@ -46,7 +47,7 @@
 }
 
 .search-box .limit {
-  margin-top: 15px;
+  margin-left: 15px;
   height: 40px;
   width: 150px;
   font-size: 1.2rem;

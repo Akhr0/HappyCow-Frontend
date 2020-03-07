@@ -1,0 +1,20 @@
+.price .icon-dollar {
+  margin: 0 1.5px;
+  color: rgb(255, 215, 0);
+}
+
+.price .icon-dollar-grey {
+  margin: 0 1.5px;
+  color: rgb(179, 179, 179);
+}
+
+.price .icon-dollar,
+.price .icon-dollar-grey,
+.price .icon-dollar-empty {
+  font-size: 1.3rem;
+}
+
+.price .icon-dollar-empty {
+  margin: 0 1.5px;
+  color: rgb(216, 216, 216);
+}

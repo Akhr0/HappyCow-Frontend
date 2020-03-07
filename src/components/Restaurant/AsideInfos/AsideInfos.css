@@ -1,0 +1,17 @@
+.aside-infos {
+  width: 300px;
+  background-color: #f8f5f4;
+}
+
+.aside-infos h5,
+.aside-infos .price {
+  font-weight: bold;
+  margin: 15px 20px;
+  font-size: 1.4rem;
+}
+
+.aside-infos > div > a {
+  font-size: 1.4rem;
+  color: green;
+  text-decoration: none;
+}

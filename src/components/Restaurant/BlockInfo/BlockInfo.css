@@ -1,0 +1,17 @@
+.block-info {
+  width: 200px;
+}
+
+.block-info .icon {
+  color: green;
+  font-size: 3rem;
+  margin-right: 7px;
+}
+
+.block-info h3 {
+  font-weight: bold;
+  color: green;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}

@@ -36,27 +36,6 @@
   margin-top: 12px;
 }
 
-.card .icon-dollar {
-  margin: 0 1.5px;
-  color: rgb(255, 215, 0);
-}
-
-.card .icon-dollar-grey {
-  margin: 0 1.5px;
-  color: rgb(179, 179, 179);
-}
-
-.card .icon-dollar,
-.card .icon-dollar-grey,
-.card .icon-dollar-empty {
-  font-size: 1.3rem;
-}
-
-.card .icon-dollar-empty {
-  margin: 0 1.5px;
-  color: rgb(216, 216, 216);
-}
-
 .card .price {
   margin-top: 10px;
 }
@@ -147,4 +126,59 @@
   box-sizing: border-box;
   justify-content: center;
   margin-top: 10px;
+}
+
+.card .award {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: rgb(255, 255, 255);
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.card .heart {
+  color: rgb(212, 212, 212);
+}
+.card .heart-selected {
+  color: red;
+}
+
+.card .heart,
+.card .heart-selected {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 21px;
+  height: 21px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.card .label {
+  position: absolute;
+  background-color: white;
+  width: 80px;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 13px;
+  letter-spacing: 0.05rem;
+  left: 35px;
+  top: -55px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.card .label-none {
+  display: none;
 }

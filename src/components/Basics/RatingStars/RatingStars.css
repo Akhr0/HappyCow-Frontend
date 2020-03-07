@@ -1,14 +1,18 @@
 .rating .icon-star {
-  margin: 0 1.5px;
   color: rgb(255, 215, 0);
 }
 
 .rating .icon-star-grey {
-  margin: 0 1.5px;
   color: rgb(179, 179, 179);
 }
 
 .rating .icon-star,
 .rating .icon-star-grey {
+  padding: 0 1.5px;
+  box-sizing: border-box;
   width: 20%;
+}
+
+.rating {
+  box-sizing: border-box;
 }

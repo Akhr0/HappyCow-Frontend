@@ -1,0 +1,22 @@
+.infos-resto {
+  padding-right: 40px;
+}
+
+.infos-resto > p {
+  margin: 30px 0;
+}
+
+.infos-resto .icon {
+  font-size: 1.4rem;
+  color: green;
+}
+
+.infos-resto > div:first-child {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.infos-resto h4 {
+  margin-left: 5px;
+  color: #8b8b8b;
+}

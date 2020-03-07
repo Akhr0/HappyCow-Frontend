@@ -3,10 +3,10 @@ import Axios from "axios";
 import { useParams } from "react-router-dom";
 import "./Search.css";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
-import MyMarker from "../../components/MyMarker/MyMarker";
-import SearchBox from "../../components/SearchBox/SearchBox";
-import ResultList from "../../components/ResultList/ResultList";
-import Pagination from "../../components/Pagination/Pagination";
+import MyMarker from "../../components/Search/MyMarker/MyMarker";
+import SearchBox from "../../components/Search/SearchBox/SearchBox";
+import ResultList from "../../components/Search/ResultList/ResultList";
+import Pagination from "../../components/Basics/Pagination/Pagination";
 
 // SEARCH PAGE ##############################################
 

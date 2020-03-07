@@ -1,0 +1,48 @@
+.header-resto {
+  height: 115px;
+  background-color: green;
+}
+
+.header-resto h2 {
+  color: white;
+  font-weight: 900;
+  font-size: 3.6rem;
+  margin: 10px 0;
+}
+
+.header-resto .wrapper {
+  width: 1100px;
+}
+
+.header-resto .rating {
+  width: 110px;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.header-resto .premium .icon {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgb(255, 208, 0);
+}
+
+.header-resto .premium > span {
+  font-weight: 900;
+  color: white;
+  margin-left: 7px;
+}
+
+.header-resto h4 {
+  font-weight: bold;
+  height: 26px;
+  margin: 0 10px;
+  background-color: white;
+  padding: 0 12px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  color: green;
+}

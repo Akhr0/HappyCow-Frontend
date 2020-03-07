@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./Restaurant.css";
+import { useParams } from "react-router-dom";
+import Carousel from "nuka-carousel";
+import HeaderResto from "../../components/Restaurant/HeaderResto/HeaderResto";
+import InfosResto from "../../components/Restaurant/InfosResto/InfosResto";
+import AsideInfos from "../../components/Restaurant/AsideInfos/AsideInfos";
 
-const Restaurant = ({ _id }) => {
+const Restaurant = props => {
   const [searchResto, setSearchResto] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const { restoId } = useParams();
 
   // FETCH DATAS
   useEffect(() => {
@@ -12,7 +18,7 @@ const Restaurant = ({ _id }) => {
     const fetchData = async () => {
       try {
         const response = await Axios.get(
-          "http://localhost:3400/restaurant?id=" + _id
+          "http://localhost:3400/restaurant?id=" + restoId
         );
 
         // Set all other States
@@ -26,14 +32,43 @@ const Restaurant = ({ _id }) => {
       }
     };
     fetchData();
-  }, [_id]);
+  }, [restoId]);
   return (
-    <div className="restaurant">
+    <div className="restaurant d-flex fdc aic w100">
       {isLoading ? (
         <p>En cours de chargement</p>
       ) : (
         <>
-          <div>{searchResto.name}</div>
+          <HeaderResto {...searchResto} />
+          <div className="d-flex wrapper box-sz sbw">
+            <div className="d-flex fdc box-sz left-side">
+              <InfosResto {...searchResto} />
+              <Carousel
+                width="95%"
+                height="240px"
+                slidesToShow={3}
+                transitionMode="scroll3d"
+                wrapAround
+                autoplay
+                cellSpacing={20}
+                pauseOnHover
+                renderBottomCenterControls={() => null}
+                className="carousel"
+              >
+                {searchResto.pictures.map((img, index) => {
+                  return (
+                    <img
+                      src={img}
+                      className="slide"
+                      key={index}
+                      alt={"img" + index}
+                    />
+                  );
+                })}
+              </Carousel>
+            </div>
+            <AsideInfos {...searchResto} />
+          </div>
         </>
       )}
     </div>

@@ -54,7 +54,11 @@ const Pagination = ({ postsPerPage, totalPosts, city, pageNum }) => {
               >
                 <Link
                   to={path + number}
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={
+                    Number(pageNum) === Number(number)
+                      ? { textDecoration: "none", color: "white" }
+                      : { textDecoration: "none", color: "black" }
+                  }
                   className="link-page"
                 >
                   {number}
