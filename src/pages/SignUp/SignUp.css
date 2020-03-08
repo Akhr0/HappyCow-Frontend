@@ -1,0 +1,174 @@
+.sign-up {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.sign-card {
+  display: flex;
+  background-color: white;
+  border-radius: 5px;
+  width: 1000px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 40px;
+}
+
+.sign-card-left {
+  margin-left: 55px;
+  padding-right: 25px;
+  box-sizing: border-box;
+}
+
+.sign-card-left h2 {
+  padding-top: 30px;
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-bottom: 47px;
+}
+
+.sign-card-left h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.sign-card-left li {
+  display: flex;
+  font-size: 1.4rem;
+  margin-bottom: 68px;
+}
+
+.sign-card-left .icon-clock,
+.sign-card-left .icon-bell,
+.sign-card-left .icon-eye {
+  font-size: 35px;
+  color: rgb(66, 130, 215);
+  margin-right: 35px;
+}
+
+.sign-card-left,
+.sign-card-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-card-right {
+  padding-left: 100px;
+  padding-right: 39px;
+  box-sizing: border-box;
+}
+
+.sign-card-right .wrapper-title {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid #f56b2a;
+  margin-bottom: 33px;
+}
+
+.sign-card-right h3 {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.sign-card-right .form-sign-up p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sign-card-right .field {
+  width: 350px;
+  height: 45px;
+  border-radius: 5px;
+  border: solid 1px #d9e0eb;
+  background-color: white;
+  margin: 15px 0;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.sign-card-right .field-select {
+  width: 350px;
+  height: 45px;
+  border-radius: 5px;
+  border: solid 1px #d9e0eb;
+  background-color: white;
+  margin: 10px 0;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+.sign-card-right .field:focus,
+.sign-card-right .mini-field:focus {
+  outline: none;
+}
+
+.sign-card-rigth-bot {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+.sign-card-rigth-bot > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 35px;
+}
+
+.sign-card-rigth-bot > div:nth-child(2) {
+  margin-left: 15px;
+}
+
+.sign-card-rigth-bot > div p {
+  margin-bottom: 19px;
+}
+
+.sign-card-right .mini-field {
+  width: 165px;
+  height: 45px;
+  border-radius: 5px;
+  border: solid 1px #d9e0eb;
+  background-color: white;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.sign-card-right .cgv {
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 19px;
+}
+
+.sign-card-right .cgv a {
+  color: #18a0fb;
+  text-decoration: none;
+}
+
+.sign-card-right .cgv input {
+  margin-right: 10px;
+}
+
+.sign-card-right .create-btn {
+  width: 350px;
+  height: 45px;
+  background-color: #4183d7;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 34px;
+  cursor: pointer;
+}
+
+.sign-card-right .create-btn:focus {
+  outline: none;
+}
