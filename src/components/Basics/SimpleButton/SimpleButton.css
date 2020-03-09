@@ -1,0 +1,24 @@
+.simple-btn {
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  border: 2px rgba(216, 216, 216, 0) solid;
+  margin-top: 15px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1.6rem;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  background-color: rgb(4, 110, 0);
+  cursor: pointer;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.simple-btn:hover {
+  border: 2px rgb(4, 110, 0) solid;
+  background-color: white;
+  color: rgb(4, 110, 0);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.65rem;
+}

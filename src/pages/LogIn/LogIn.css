@@ -95,3 +95,8 @@
   cursor: pointer;
   outline: none;
 }
+
+.log-in-card .error-txt {
+  color: red;
+  font-weight: bold;
+}

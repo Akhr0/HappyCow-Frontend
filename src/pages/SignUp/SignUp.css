@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .sign-card {
@@ -60,11 +60,11 @@
 }
 
 .sign-card-right .wrapper-title {
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid #f56b2a;
+  border-bottom: 3px solid green;
   margin-bottom: 33px;
 }
 
@@ -120,7 +120,7 @@
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .sign-card-rigth-bot > div:nth-child(2) {
@@ -171,4 +171,24 @@
 
 .sign-card-right .create-btn:focus {
   outline: none;
+}
+
+.sign-card .wrong-txt,
+.sign-card .good-txt {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sign-card .wrong-txt {
+  color: rgb(200, 0, 0);
+  border: 1px solid rgb(200, 0, 0);
+}
+
+.sign-card .good-txt {
+  color: green;
+  border: 1px solid green;
 }

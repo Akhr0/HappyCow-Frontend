@@ -5,24 +5,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
 
 const SignUp = ({ user }) => {
+  //History
   let history = useHistory();
   user && history.push("/");
 
+  //Creation List of years
   const ageArr = [];
-
   for (let i = 2020; i >= 1920; i--) {
     ageArr.push(i);
   }
 
-  const [pseudo, setPseudo] = useState("Akhro222");
-  const [mail, setMail] = useState("nvilleneuve.contact@gmail.com");
-  const [password, setPassword] = useState("Fccrazy22!");
-  const [confirmPassword, setConfirmPassword] = useState("Fccrazy22!");
-  const [checked, setChecked] = useState(true);
-  const [vegStatus, setVegStatus] = useState("vegetarian");
-  const [homeCity, setHomeCity] = useState("paris");
-  const [birthYear, setBirthYear] = useState("1989");
+  //Creation states
+  const [pseudo, setPseudo] = useState("");
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [checked, setChecked] = useState(false);
+  const [vegStatus, setVegStatus] = useState("");
+  const [homeCity, setHomeCity] = useState("");
+  const [birthYear, setBirthYear] = useState("");
+  const [message, setMessage] = useState();
 
+  //Function onSubmit
   const handleSubmit = event => {
     event.preventDefault();
     const sendData = async () => {
@@ -39,37 +43,67 @@ const SignUp = ({ user }) => {
           }
         );
         console.log(response.data);
-        response.data.token
-          ? alert("Votre compte a bien été créé")
-          : alert(response.data.message);
-
-        setPseudo("");
-        setMail("");
-        setPassword("");
-        setConfirmPassword("");
-        setChecked(false);
-        setVegStatus("");
-        setHomeCity("");
-        setBirthYear("");
+        if (response.data.token) {
+          setMessage({
+            status: true,
+            text: "Your account has been created"
+          });
+          setPseudo("");
+          setMail("");
+          setPassword("");
+          setConfirmPassword("");
+          setChecked(false);
+          setVegStatus("");
+          setHomeCity("");
+          setBirthYear("");
+        } else {
+          setMessage({ status: false, text: response.data.message });
+        }
       } catch (error) {
-        alert(error.message);
+        setMessage({ status: false, text: error.message });
       }
     };
 
-    if (password.length > 5) {
-      if (password === confirmPassword) {
-        if (checked) {
-          sendData();
+    //Verfication of password regex
+    const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
+    const passwordChecked = regexPassword.test(password);
+
+    //Verification of Username regex
+    const regexUsername = /^[\w]{6,16}$/;
+    const usernameChecked = regexUsername.test(pseudo);
+
+    if (usernameChecked) {
+      if (passwordChecked) {
+        if (password === confirmPassword) {
+          if (checked) {
+            sendData();
+          } else {
+            setMessage({
+              status: false,
+              text: "You must accept the General Terms of Use"
+            });
+          }
         } else {
-          alert("Vous devez accepter les conditions");
+          setMessage({
+            status: false,
+            text: "You have to enter the same password"
+          });
         }
       } else {
-        alert("Vos mots de passe doivent être identiques");
+        setMessage({
+          status: false,
+          text:
+            "You must have at least 6 characters in your password including 1 maj, 1 min, 1 num and 1 special char"
+        });
       }
     } else {
-      alert("Votre mot de passe doit comporter au moins 6 caractères");
+      setMessage({
+        status: false,
+        text: "Your username has to contain between 6 and 16 characters"
+      });
     }
   };
+
   return (
     <div className="sign-up">
       <div className="sign-card">
@@ -111,31 +145,34 @@ const SignUp = ({ user }) => {
         </div>
         <div className="sign-card-right">
           <div className="wrapper-title">
-            <h3>Créer un Compte</h3>
+            <h3>Create an account</h3>
           </div>
 
           <form onSubmit={handleSubmit} className="form-sign-up">
-            <p>Pseudo *</p>
+            <p>Username *</p>
             <input
               type="text"
+              required
               className="field"
               value={pseudo}
               onChange={event => {
                 setPseudo(event.target.value);
               }}
             />
-            <p>Adresse email *</p>
+            <p>Email *</p>
             <input
               type="email"
               className="field"
+              required
               value={mail}
               onChange={event => {
                 setMail(event.target.value);
               }}
             />
-            <p>Ville actuelle *</p>
+            <p>Your city *</p>
             <input
               type="text"
+              required
               className="field"
               value={homeCity}
               onChange={event => {
@@ -144,6 +181,8 @@ const SignUp = ({ user }) => {
             />
             <select
               id="vegStatus"
+              value={vegStatus}
+              required
               className="field-select"
               onChange={event => {
                 setVegStatus(event.target.value);
@@ -161,13 +200,15 @@ const SignUp = ({ user }) => {
 
             <select
               id="birthYear"
+              value={birthYear}
               className="field-select"
+              required
               onChange={event => {
                 setBirthYear(event.target.value);
               }}
             >
               {" "}
-              <option value="">Année de naissance *</option>
+              <option value="">Birth Year *</option>
               {ageArr.map(age => {
                 return (
                   <option key={age} value={age}>
@@ -179,10 +220,11 @@ const SignUp = ({ user }) => {
 
             <div className="sign-card-rigth-bot">
               <div>
-                <p>Mot de passe *</p>
+                <p>Password *</p>
                 <input
                   type="password"
                   className="mini-field"
+                  required
                   value={password}
                   onChange={event => {
                     setPassword(event.target.value);
@@ -190,9 +232,10 @@ const SignUp = ({ user }) => {
                 />
               </div>
               <div>
-                <p>Confirmer le mot de passe *</p>
+                <p>Confirm Password *</p>
                 <input
                   type="password"
+                  required
                   className="mini-field"
                   value={confirmPassword}
                   onChange={event => {
@@ -212,13 +255,22 @@ const SignUp = ({ user }) => {
                   setChecked(!checked);
                 }}
               />
-              « J'accepte les <a href="/">Conditions Générales d'Utilisation</a>{" "}
-              »
+              « I aggree with the <a href="/">General Terms of Use</a> »
             </div>
-
+            {message && (
+              <div
+                className={
+                  message.status === true
+                    ? "good-txt d-flex jcc w100"
+                    : "wrong-txt d-flex jcc w100"
+                }
+              >
+                {message.text}
+              </div>
+            )}
             <input
               type="submit"
-              value="Créer mon Compte Personnel"
+              value="Create my account"
               className="create-btn"
             />
           </form>

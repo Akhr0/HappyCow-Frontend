@@ -3,8 +3,11 @@ import "./Header.css";
 import Axios from "axios";
 import Cookies from "js-cookie";
 import { useHistory } from "react-router-dom";
+import SimpleButton from "../../Basics/SimpleButton/SimpleButton";
+import Logo from "../../../assets/img/logo.svg";
 
 const Header = ({ user, setUser }) => {
+  //Creation of states
   const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,27 +40,39 @@ const Header = ({ user, setUser }) => {
       <nav className="w100 h100 box-sz">
         <div className="wrapper d-flex aic sbw h100">
           <img
-            src="https://www.happycow.net/img/logo.svg"
+            src={Logo}
             alt="logo"
             className="logo"
+            onClick={() => {
+              history.push("/");
+            }}
           />
-          <div>
-            {isLoading ? null : <img src={result.avatar} alt="avatar" />}
-            {isLoading ? null : <span>Bonjour {result.username}</span>}
+          <div className="d-flex aic">
+            {isLoading ? null : (
+              <p>
+                Welcome{" "}
+                <span style={{ fontWeight: "bold", color: "green" }}>
+                  {result.username}
+                </span>
+              </p>
+            )}
+            {isLoading ? null : (
+              <img src={result.avatar} alt="avatar" id="avatar" />
+            )}
+
+            <SimpleButton name="Add Listing" />
             {user ? (
-              <button
-                onClick={() => {
+              <SimpleButton
+                name="Disconnect"
+                click={() => {
                   Cookies.remove("_Auth");
                   setUser(null);
                   setIsLoading(true);
-                  history.push("/");
                 }}
-              >
-                Se déconnecter
-              </button>
-            ) : null}
-            <span>Add Listing</span>
-            <span>Login/Join</span>
+              />
+            ) : (
+              <SimpleButton name="Login / Join" path="/login" />
+            )}
           </div>
         </div>
       </nav>

@@ -4,11 +4,17 @@ import Axios from "axios";
 import Cookies from "js-cookie";
 import "./LogIn.css";
 
-const LogIn = ({ setUser }) => {
+const LogIn = ({ setUser, user }) => {
+  //History
   let history = useHistory();
+  user && history.goBack();
+
+  //Creation of states
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
+  //Function onSubmit
   const handleSubmit = event => {
     event.preventDefault();
     const sendData = async () => {
@@ -17,9 +23,13 @@ const LogIn = ({ setUser }) => {
           email: mail,
           password: password
         });
-        Cookies.set("_Auth", response.data.token, { expires: 4 });
-        setUser(true);
-        history.goBack();
+        if (response.data.token) {
+          Cookies.set("_Auth", response.data.token, { expires: 4 });
+          setUser(response.data.token);
+          history.goBack();
+        } else {
+          setError(true);
+        }
       } catch (error) {
         console.log(error.message);
       }
@@ -34,7 +44,7 @@ const LogIn = ({ setUser }) => {
           <h3>Connexion</h3>
 
           <form onSubmit={handleSubmit}>
-            <label htmlFor="mail">Adresse email</label>
+            <label htmlFor="mail">Email</label>
             <input
               type="email"
               id="mail"
@@ -43,7 +53,7 @@ const LogIn = ({ setUser }) => {
                 setMail(event.target.value);
               }}
             />
-            <label htmlFor="password">Mot de Passe</label>
+            <label htmlFor="password">Password</label>
             <input
               id="password"
               type="password"
@@ -52,18 +62,23 @@ const LogIn = ({ setUser }) => {
                 setPassword(event.target.value);
               }}
             />
-            <input className="connect" type="submit" value="Se connecter" />
+            {error ? (
+              <span className="error-txt d-flex jcc">
+                Wrong email or password, try again.
+              </span>
+            ) : null}
+            <input className="connect" type="submit" value="Connect" />
           </form>
         </div>
         <div className="log-in-card-bot">
-          <h3>Vous n'avez pas de compte ?</h3>
+          <h3>You haven't an account yet ?</h3>
 
           <button
             onClick={() => {
               history.push("/signup");
             }}
           >
-            Créer un compte
+            Create account
           </button>
         </div>
       </div>

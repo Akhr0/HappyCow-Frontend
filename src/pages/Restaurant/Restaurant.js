@@ -8,8 +8,11 @@ import InfosResto from "../../components/Restaurant/InfosResto/InfosResto";
 import AsideInfos from "../../components/Restaurant/AsideInfos/AsideInfos";
 
 const Restaurant = props => {
+  //Creation of states
   const [searchResto, setSearchResto] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
+  //Set restoId
   const { restoId } = useParams();
 
   // FETCH DATAS

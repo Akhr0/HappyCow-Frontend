@@ -30,7 +30,7 @@ const SearchBox = ({ count, city, setType, type, setLimit, currentSearch }) => {
             setSearch(e.target.value);
           }}
         />
-        <input type="submit" className="search-btn" />
+        <input type="submit" className="search-btn" value="Search" />
       </form>
       <div className="d-flex aic">
         <Button

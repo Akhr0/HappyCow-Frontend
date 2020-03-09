@@ -11,10 +11,10 @@ import Pagination from "../../components/Basics/Pagination/Pagination";
 // SEARCH PAGE ##############################################
 
 const Search = props => {
+  //Set variables
   const { search, page } = useParams();
   let pageNum;
   page ? (pageNum = page) : (pageNum = 1);
-
   const typeStart = {
     vegan: 0,
     vegetarian: 0,
@@ -22,6 +22,7 @@ const Search = props => {
     store: 0
   };
 
+  // Creation of states
   const [searchResult, setSearchResult] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [limit, setLimit] = useState(30);

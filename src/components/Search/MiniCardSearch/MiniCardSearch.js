@@ -15,13 +15,17 @@ const MiniCardSearch = ({
   adress,
   premium
 }) => {
+  //Creation of variables
   let borderStyle;
   let overlayStyle;
   let picto;
+
+  //Creation of states
   const history = useHistory();
   const [favori, setFavori] = useState(false);
   const [label, setLabel] = useState(false);
 
+  //Switch for Style
   switch (type) {
     case "vegan":
       borderStyle = "card green";

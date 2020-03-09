@@ -52,7 +52,7 @@ function App() {
           <SignUp user={user} />
         </Route>
         <Route exact path="/login">
-          <LogIn setUser={setUser} />
+          <LogIn setUser={setUser} user={user} />
         </Route>
         <Route exact path="/search/:search/:page?">
           <Search />

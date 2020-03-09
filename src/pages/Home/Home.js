@@ -29,7 +29,7 @@ const Home = props => {
         />
         <input
           type="submit"
-          value="Rechercher"
+          value="Search"
           className="search-btn br5 out-none box-sz cpoint"
         />
       </form>

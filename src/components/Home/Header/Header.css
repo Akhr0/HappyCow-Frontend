@@ -5,8 +5,16 @@ header .wrapper {
   margin: 0 50px;
 }
 header .logo {
-  width: 220px;
+  width: 200px;
+  cursor: pointer;
 }
 header nav {
   border-bottom: green solid 3px;
+}
+
+#avatar {
+  height: 60px;
+  border-radius: 30px;
+  margin: 0 10px;
+  cursor: pointer;
 }
