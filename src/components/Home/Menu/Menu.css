@@ -1,0 +1,28 @@
+.menu-list {
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.menu-list span {
+  font-size: 1.6rem;
+  padding: 15px 0;
+  width: 80%;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-list span:hover {
+  font-weight: 900;
+}
+
+.menu-list span:nth-child(-n + 2) {
+  border-bottom: white 1px solid;
+}

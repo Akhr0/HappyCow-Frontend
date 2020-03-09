@@ -8,6 +8,7 @@ import "./assets/css/App.css";
 import Restaurant from "./pages/Restaurant/Restaurant";
 import SignUp from "./pages/SignUp/SignUp";
 import LogIn from "./pages/LogIn/LogIn";
+import Profil from "./pages/Profil/Profil";
 import Cookies from "js-cookie";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -19,7 +20,9 @@ import {
   faHome,
   faHeart,
   faBell,
-  faEye
+  faEye,
+  faChevronDown,
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faDollarSign,
@@ -30,7 +33,9 @@ library.add(
   faHome,
   faHeart,
   faBell,
-  faEye
+  faEye,
+  faChevronDown,
+  faEnvelope
 );
 
 function App() {
@@ -53,6 +58,9 @@ function App() {
         </Route>
         <Route exact path="/login">
           <LogIn setUser={setUser} user={user} />
+        </Route>
+        <Route exact path="/profil">
+          <Profil user={user} />
         </Route>
         <Route exact path="/search/:search/:page?">
           <Search />

@@ -13,8 +13,64 @@ header nav {
 }
 
 #avatar {
-  height: 60px;
-  border-radius: 30px;
+  height: 45px;
+  border-radius: 40px;
   margin: 0 10px;
   cursor: pointer;
+  border: 1px solid #c4c4c4;
+  padding: 2px;
+}
+
+header .icon-chevron {
+  margin-left: 5px;
+  font-size: 1.2rem;
+}
+
+header .account {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: green;
+  margin-right: 15px;
+  line-height: 3rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+header .wrap-account {
+  position: relative;
+}
+
+header .account .menu-list {
+  position: absolute;
+  bottom: -170px;
+  left: -20px;
+  background-color: green;
+  display: none;
+  flex-direction: column;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 9999999;
+}
+
+header .account .menu-list span {
+  font-size: 1.6rem;
+  padding: 15px 0;
+  width: 80%;
+  color: white;
+  cursor: pointer;
+  font-weight: 200;
+}
+
+header .account .menu-list span:hover {
+  font-weight: 900;
+}
+
+header .account .menu-list span:nth-child(-n + 2) {
+  border-bottom: white 1px solid;
+}
+
+header .wrap-account:hover .menu-list {
+  display: flex;
 }

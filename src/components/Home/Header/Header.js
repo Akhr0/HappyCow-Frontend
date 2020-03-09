@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import Axios from "axios";
-import Cookies from "js-cookie";
 import { useHistory } from "react-router-dom";
 import SimpleButton from "../../Basics/SimpleButton/SimpleButton";
 import Logo from "../../../assets/img/logo.svg";
+import IconClickable from "../../Basics/IconClickable/IconClickable";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Cookies from "js-cookie";
 
 const Header = ({ user, setUser }) => {
   //Creation of states
@@ -20,7 +22,6 @@ const Header = ({ user, setUser }) => {
             Authorization: "Bearer " + user
           }
         });
-        console.log(response.data);
         setResult(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -47,29 +48,46 @@ const Header = ({ user, setUser }) => {
               history.push("/");
             }}
           />
-          <div className="d-flex aic">
-            {isLoading ? null : (
-              <p>
-                Welcome{" "}
-                <span style={{ fontWeight: "bold", color: "green" }}>
-                  {result.username}
-                </span>
-              </p>
-            )}
+          <div className="d-flex aic h100">
+            <SimpleButton name="Add Listing" />
             {isLoading ? null : (
               <img src={result.avatar} alt="avatar" id="avatar" />
             )}
+            {isLoading ? null : (
+              <div className="wrap-account h100 d-flex aic">
+                <span className="account">
+                  {result.username}
+                  <FontAwesomeIcon
+                    icon="chevron-down"
+                    className="icon-chevron"
+                  />
+                  <div className="menu-list">
+                    <span>My profile</span>
+                    <span>Messages</span>
+                    <span
+                      onClick={() => {
+                        Cookies.remove("_Auth");
+                        setUser(null);
+                        setIsLoading(true);
+                      }}
+                    >
+                      Logout
+                    </span>
+                  </div>
+                </span>
+              </div>
+            )}
 
-            <SimpleButton name="Add Listing" />
             {user ? (
-              <SimpleButton
-                name="Disconnect"
-                click={() => {
-                  Cookies.remove("_Auth");
-                  setUser(null);
-                  setIsLoading(true);
-                }}
-              />
+              <>
+                <IconClickable
+                  icon="envelope"
+                  path="/messages"
+                  color="green"
+                  size="2.5"
+                />
+                <IconClickable icon="bell" color="green" size="2.5" />
+              </>
             ) : (
               <SimpleButton name="Login / Join" path="/login" />
             )}

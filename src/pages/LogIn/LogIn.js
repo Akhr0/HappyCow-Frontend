@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
 import Cookies from "js-cookie";
@@ -7,7 +7,13 @@ import "./LogIn.css";
 const LogIn = ({ setUser, user }) => {
   //History
   let history = useHistory();
-  user && history.goBack();
+  useEffect(() => {
+    const alreadyLogged = Cookies.get("_Auth");
+    if (alreadyLogged) {
+      history.push("/");
+    }
+    console.log("passage dans useEffect");
+  }, [user, history]);
 
   //Creation of states
   const [mail, setMail] = useState("");
@@ -26,7 +32,7 @@ const LogIn = ({ setUser, user }) => {
         if (response.data.token) {
           Cookies.set("_Auth", response.data.token, { expires: 4 });
           setUser(response.data.token);
-          history.goBack();
+          history.push("/");
         } else {
           setError(true);
         }
@@ -41,7 +47,7 @@ const LogIn = ({ setUser, user }) => {
     <div className="log-in">
       <div className="log-in-card">
         <div className="log-in-card-top">
-          <h3>Connexion</h3>
+          <h3>Log In</h3>
 
           <form onSubmit={handleSubmit}>
             <label htmlFor="mail">Email</label>

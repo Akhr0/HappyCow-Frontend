@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import RatingStars from "../../Basics/RatingStars/RatingStars";
 import PriceRating from "../../Basics/PriceRating/PriceRating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Axios from "axios";
+import Cookies from "js-cookie";
 
 const MiniCardSearch = ({
   pictures,
@@ -24,6 +26,33 @@ const MiniCardSearch = ({
   const history = useHistory();
   const [favori, setFavori] = useState(false);
   const [label, setLabel] = useState(false);
+  const cookieAuth = Cookies.get("_Auth");
+
+  const [result, setResult] = useState();
+
+  const fetchDatas = async (fav, id) => {
+    try {
+      const formData = new FormData();
+      formData.append("fav", fav);
+      formData.append("id", id);
+      const response = await Axios.post(
+        "http://localhost:3400/user/favoris",
+        formData,
+        {
+          headers: {
+            Authorization: "Bearer " + cookieAuth
+          }
+        }
+      );
+
+      setResult(response.data);
+      console.log(response.data);
+    } catch (error) {
+      setResult({
+        message: "Une erreur est survenue"
+      });
+    }
+  };
 
   //Switch for Style
   switch (type) {
@@ -85,6 +114,7 @@ const MiniCardSearch = ({
         className={favori ? "heart-selected" : "heart"}
         onClick={e => {
           setFavori(!favori);
+          fetchDatas(favori, _id);
         }}
       />
       <img
