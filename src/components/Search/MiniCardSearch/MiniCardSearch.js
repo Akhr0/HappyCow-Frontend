@@ -5,7 +5,6 @@ import RatingStars from "../../Basics/RatingStars/RatingStars";
 import PriceRating from "../../Basics/PriceRating/PriceRating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Axios from "axios";
-import Cookies from "js-cookie";
 
 const MiniCardSearch = ({
   pictures,
@@ -15,42 +14,43 @@ const MiniCardSearch = ({
   price,
   _id,
   adress,
-  premium
+  premium,
+  cookieAuth,
+  arrIds,
+  searchResult
 }) => {
   //Creation of variables
   let borderStyle;
   let overlayStyle;
   let picto;
+  let valueFav;
+
+  if (arrIds) {
+    valueFav = arrIds.indexOf(_id) !== -1 ? true : false;
+  } else {
+    valueFav = false;
+  }
 
   //Creation of states
   const history = useHistory();
-  const [favori, setFavori] = useState(false);
+  const [favori, setFavori] = useState(valueFav);
   const [label, setLabel] = useState(false);
-  const cookieAuth = Cookies.get("_Auth");
-
-  const [result, setResult] = useState();
 
   const fetchDatas = async (fav, id) => {
     try {
+      if (!cookieAuth) {
+        return history.push("/login");
+      }
       const formData = new FormData();
       formData.append("fav", fav);
       formData.append("id", id);
-      const response = await Axios.post(
-        "http://localhost:3400/user/favoris",
-        formData,
-        {
-          headers: {
-            Authorization: "Bearer " + cookieAuth
-          }
+      await Axios.post("http://localhost:3400/user/favoris", formData, {
+        headers: {
+          Authorization: "Bearer " + cookieAuth
         }
-      );
-
-      setResult(response.data);
-      console.log(response.data);
-    } catch (error) {
-      setResult({
-        message: "Une erreur est survenue"
       });
+    } catch (error) {
+      alert("Une erreur est survenue");
     }
   };
 

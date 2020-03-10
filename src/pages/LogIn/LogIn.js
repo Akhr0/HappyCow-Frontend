@@ -12,7 +12,6 @@ const LogIn = ({ setUser, user }) => {
     if (alreadyLogged) {
       history.push("/");
     }
-    console.log("passage dans useEffect");
   }, [user, history]);
 
   //Creation of states

@@ -7,6 +7,7 @@ import MyMarker from "../../components/Search/MyMarker/MyMarker";
 import SearchBox from "../../components/Search/SearchBox/SearchBox";
 import ResultList from "../../components/Search/ResultList/ResultList";
 import Pagination from "../../components/Basics/Pagination/Pagination";
+import Cookies from "js-cookie";
 
 // SEARCH PAGE ##############################################
 
@@ -21,6 +22,7 @@ const Search = props => {
     "veg-options": 0,
     store: 0
   };
+  const cookieAuth = Cookies.get("_Auth");
 
   // Creation of states
   const [searchResult, setSearchResult] = useState([]);
@@ -104,7 +106,11 @@ const Search = props => {
                 pageNum={pageNum}
               />
             </div>
-            <ResultList searchResult={searchResult} error={error} />
+            <ResultList
+              searchResult={searchResult}
+              error={error}
+              cookieAuth={cookieAuth}
+            />
             <div className={error ? "d-none" : "d-flex jcc w100 pagination"}>
               <Pagination
                 postsPerPage={limit}

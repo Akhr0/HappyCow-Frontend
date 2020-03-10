@@ -1,19 +1,61 @@
 main .search-txt {
-  height: 40px;
-  width: 300px;
+  height: 50px;
+  width: 40%;
   border: 1px rgb(219, 219, 219) solid;
-  padding-left: 15px;
-  font-size: 1.8rem;
+  padding-left: 20px;
+  font-size: 1.6rem;
+  border-radius: 25px;
+  letter-spacing: 0.1rem;
+}
+
+main h1 {
+  width: 100%;
+  position: absolute;
+  font-size: 3.6rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 60px;
+  z-index: 99;
 }
 
 main .search-btn {
-  height: 40px;
+  height: 50px;
   width: 150px;
   border: 1px rgb(219, 219, 219) solid;
   font-size: 1.8rem;
   margin-left: 10px;
+  border-radius: 25px;
 }
 
 main form {
-  margin-top: 20px;
+  margin-top: 130px;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+}
+
+@keyframes animateWave {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1.2);
+  }
+}
+
+main .wave-container {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+main .wave-container > svg {
+  display: block;
+  transform-origin: top;
+  animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+main .wrapper {
+  width: 50%;
+  margin-top: 60px;
 }
