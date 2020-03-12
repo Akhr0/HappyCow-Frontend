@@ -83,13 +83,14 @@ const Home = props => {
             type="near"
             cookieAuth={cookieAuth}
             arrIds={result}
-            height="370px"
+            height="360px"
           />
           <Block
             title="Top Vegan Friendly Cities"
             type="cities"
             cookieAuth={cookieAuth}
             arrIds={result}
+            height="370px"
           />
           <Block
             title="10 Best Vegan Restaurants in Paris, France"

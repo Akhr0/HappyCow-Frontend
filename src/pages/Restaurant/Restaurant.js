@@ -6,8 +6,10 @@ import Carousel from "nuka-carousel";
 import HeaderResto from "../../components/Restaurant/HeaderResto/HeaderResto";
 import InfosResto from "../../components/Restaurant/InfosResto/InfosResto";
 import AsideInfos from "../../components/Restaurant/AsideInfos/AsideInfos";
+import ReviewForm from "../../components/Restaurant/ReviewForm/ReviewForm";
+import ReviewList from "../../components/Restaurant/ReviewList/ReviewList";
 
-const Restaurant = props => {
+const Restaurant = ({ user }) => {
   //Creation of states
   const [searchResto, setSearchResto] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -50,10 +52,9 @@ const Restaurant = props => {
                 width="95%"
                 height="240px"
                 slidesToShow={3}
-                transitionMode="scroll3d"
+                transitionMode="scroll"
                 wrapAround
-                autoplay
-                cellSpacing={20}
+                cellSpacing={10}
                 pauseOnHover
                 renderBottomCenterControls={() => null}
                 className="carousel"
@@ -69,6 +70,8 @@ const Restaurant = props => {
                   );
                 })}
               </Carousel>
+              <ReviewList restoId={restoId} />
+              <ReviewForm user={user} restoId={restoId} />
             </div>
             <AsideInfos {...searchResto} />
           </div>

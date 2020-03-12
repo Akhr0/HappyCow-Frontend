@@ -3,10 +3,11 @@ import Axios from "axios";
 import "./Block.css";
 import Carousel from "nuka-carousel";
 import BlockCardNear from "../BlockCardNear/BlockCardNear";
+import BlockCardCity from "../BlockCardCity/BlockCardCity";
 import { useHistory } from "react-router-dom";
 
 const Block = ({ title, type, cookieAuth, arrIds, height }) => {
-  const [resultNear, setResultNear] = useState();
+  const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [best, setBest] = useState(0);
 
@@ -22,10 +23,10 @@ const Block = ({ title, type, cookieAuth, arrIds, height }) => {
             premium
         );
         const arr = await funcCreateNearCards(response.data.result.restaurants);
-        setResultNear(arr);
+        setResult(arr);
         setIsLoading(false);
       } catch (error) {
-        setResultNear({
+        setResult({
           message: "Une erreur est survenue"
         });
       }
@@ -46,7 +47,23 @@ const Block = ({ title, type, cookieAuth, arrIds, height }) => {
       });
     };
 
-    const funcCities = () => {
+    const funcCreateCitiesCards = arr => {
+      return arr.map((card, index) => {
+        return <BlockCardCity key={index} {...card} history={history} />;
+      });
+    };
+
+    const funcCities = async () => {
+      try {
+        const response = await Axios.get("http://localhost:3400/search/cities");
+        const arr = await funcCreateCitiesCards(response.data);
+        setResult(arr);
+        setIsLoading(false);
+      } catch (error) {
+        setResult({
+          message: "Une erreur est survenue"
+        });
+      }
       return null;
     };
 
@@ -77,7 +94,7 @@ const Block = ({ title, type, cookieAuth, arrIds, height }) => {
           renderBottomCenterControls={() => null}
           height={height}
         >
-          {resultNear.map(card => {
+          {result.map(card => {
             return card;
           })}
         </Carousel>

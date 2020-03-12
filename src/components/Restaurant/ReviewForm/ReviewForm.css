@@ -1,0 +1,55 @@
+.review-form {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.review-form form input,
+.review-form form textarea {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.review-form form > input {
+  height: 40px;
+}
+
+.review-form > h4 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.review-form form > textarea {
+  padding-top: 15px;
+}
+
+.review-form form > input,
+.review-form form > textarea {
+  font-size: 1.6rem;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border: 1px solid #c4c4c4;
+}
+
+.review-form .wrong-txt,
+.review-form .good-txt {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.review-form .wrong-txt {
+  color: rgb(200, 0, 0);
+  border: 1px solid rgb(200, 0, 0);
+}
+
+.review-form .good-txt {
+  color: green;
+  border: 1px solid green;
+}

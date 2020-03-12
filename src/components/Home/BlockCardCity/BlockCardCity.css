@@ -1,0 +1,38 @@
+.block-card-city {
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 7px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.25);
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  height: 350px;
+  border-radius: 9px;
+  transform: scale(0.89, 0.89);
+  transform-origin: center;
+  margin-top: 10px;
+}
+
+.block-card-city:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transform: scale(0.92, 0.92);
+  transform-origin: center;
+}
+
+.block-card-city img {
+  object-fit: cover;
+  border-radius: 9px;
+  height: 100%;
+  width: 100%;
+}
+
+.block-card-city h2 {
+  position: absolute;
+  top: 40px;
+  font-size: 2.4rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}

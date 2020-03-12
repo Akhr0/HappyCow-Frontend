@@ -1,7 +1,6 @@
 .block-card-near {
   background-color: white;
   border: 1px solid #eeeeee;
-  margin-top: 15px;
   position: relative;
   box-sizing: border-box;
   cursor: pointer;
@@ -12,6 +11,7 @@
   transform: scale(0.89, 0.89);
   transform-origin: center;
   padding-bottom: 20px;
+  margin-top: 15px;
 }
 
 .block-card-near:hover {

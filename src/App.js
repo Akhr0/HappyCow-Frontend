@@ -51,7 +51,7 @@ function App() {
       <Header user={user} setUser={setUser} />
       <Switch>
         <Route exact path="/restaurant/:restoId">
-          <Restaurant />
+          <Restaurant user={user} />
         </Route>
         <Route exact path="/signup">
           <SignUp user={user} />
