@@ -57,3 +57,9 @@ body {
 .d-none {
   display: none;
 }
+
+button,
+.slider-slide,
+.slider-frame {
+  outline: none;
+}

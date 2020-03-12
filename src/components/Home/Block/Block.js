@@ -2,21 +2,28 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import "./Block.css";
 import Carousel from "nuka-carousel";
+import BlockCardNear from "../BlockCardNear/BlockCardNear";
+import { useHistory } from "react-router-dom";
 
-const Block = ({ title, type }) => {
-  let data;
-
+const Block = ({ title, type, cookieAuth, arrIds, height }) => {
   const [resultNear, setResultNear] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [best, setBest] = useState(0);
+
+  const history = useHistory();
 
   useEffect(() => {
-    const funcNear = async city => {
+    const funcNear = async (city, premium) => {
       try {
         const response = await Axios.get(
           "http://localhost:3400/search?location=" +
             city +
-            "&limit=50&vegan=1&vege=1&vo=1&premium=1"
+            "&limit=15&vegan=1&vege=1&vo=1&premium=" +
+            premium
         );
-        setResultNear(response.data.result.restaurants);
+        const arr = await funcCreateNearCards(response.data.result.restaurants);
+        setResultNear(arr);
+        setIsLoading(false);
       } catch (error) {
         setResultNear({
           message: "Une erreur est survenue"
@@ -24,62 +31,57 @@ const Block = ({ title, type }) => {
       }
     };
 
-    const funcBest = () => {
-      return null;
+    const funcCreateNearCards = arr => {
+      return arr.map((card, index) => {
+        return (
+          <BlockCardNear
+            key={index}
+            {...card}
+            cookieAuth={cookieAuth}
+            arrIds={arrIds}
+            history={history}
+            best={best}
+          />
+        );
+      });
     };
+
     const funcCities = () => {
       return null;
     };
 
     switch (type) {
       case "near":
-        data = funcNear("paris");
+        funcNear("paris", 1);
         break;
       case "best":
-        data = funcBest();
+        funcNear("paris", 0);
+        setBest(1);
         break;
       case "cities":
-        data = funcCities();
+        funcCities();
         break;
       default:
-        data = null;
+        alert("Something wrong happened");
     }
-  }, [type]);
+  }, [type, arrIds, cookieAuth, history, best]);
 
   return (
     <div className="block-home">
       <h2>{title}</h2>
-      <Carousel
-        width="100%"
-        height="240px"
-        slidesToShow={4}
-        transitionMode="scroll"
-        cellSpacing={20}
-        pauseOnHover
-        renderBottomCenterControls={() => null}
-        className="carousel"
-      >
-        <img
-          src="https://lh3.googleusercontent.com/proxy/Kwn0wqudr3GaKF5Y718M_3WFf0_CKNAT_TR9RtUxrI3pM899hiDA27VvV-9o4ZEZvNU3caMCHVkzuRvp7hkdPu9e_CFEdjovFpZxh3SeQVsJASFRj24aI1Xv2XE"
-          alt="london"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/proxy/Kwn0wqudr3GaKF5Y718M_3WFf0_CKNAT_TR9RtUxrI3pM899hiDA27VvV-9o4ZEZvNU3caMCHVkzuRvp7hkdPu9e_CFEdjovFpZxh3SeQVsJASFRj24aI1Xv2XE"
-          alt="london"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/proxy/Kwn0wqudr3GaKF5Y718M_3WFf0_CKNAT_TR9RtUxrI3pM899hiDA27VvV-9o4ZEZvNU3caMCHVkzuRvp7hkdPu9e_CFEdjovFpZxh3SeQVsJASFRj24aI1Xv2XE"
-          alt="london"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/proxy/Kwn0wqudr3GaKF5Y718M_3WFf0_CKNAT_TR9RtUxrI3pM899hiDA27VvV-9o4ZEZvNU3caMCHVkzuRvp7hkdPu9e_CFEdjovFpZxh3SeQVsJASFRj24aI1Xv2XE"
-          alt="london"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/proxy/Kwn0wqudr3GaKF5Y718M_3WFf0_CKNAT_TR9RtUxrI3pM899hiDA27VvV-9o4ZEZvNU3caMCHVkzuRvp7hkdPu9e_CFEdjovFpZxh3SeQVsJASFRj24aI1Xv2XE"
-          alt="london"
-        />
-      </Carousel>
+      {isLoading ? null : (
+        <Carousel
+          width="100%"
+          slidesToShow={4}
+          transitionMode="scroll"
+          renderBottomCenterControls={() => null}
+          height={height}
+        >
+          {resultNear.map(card => {
+            return card;
+          })}
+        </Carousel>
+      )}
     </div>
   );
 };

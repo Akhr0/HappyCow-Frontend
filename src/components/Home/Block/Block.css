@@ -2,8 +2,7 @@
   margin-top: 50px;
 }
 
-.block-home h2 {
+.block-home > h2 {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 10px;
 }

@@ -1,0 +1,135 @@
+.block-card-near {
+  background-color: white;
+  border: 1px solid #eeeeee;
+  margin-top: 15px;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 7px;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.15);
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transform: scale(0.89, 0.89);
+  transform-origin: center;
+  padding-bottom: 20px;
+}
+
+.block-card-near:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transform: scale(0.92, 0.92);
+  transform-origin: center;
+}
+
+.block-card-near img {
+  object-fit: cover;
+  object-position: center;
+  height: 175px;
+  width: 100%;
+  border-radius: 7px;
+}
+
+.block-card-near h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: green;
+  line-height: 12px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.8rem;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.block-card-near .wrap {
+  width: 90%;
+}
+
+.block-card-near .title {
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.block-card-near .title > img {
+  height: 25px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.block-card-near .price {
+  margin-top: 10px;
+}
+
+.block-card-near .rating {
+  width: 50%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.block-card-near .description {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.block-card-near .award {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: rgb(255, 255, 255);
+  width: 25px;
+  height: 25px;
+  background-color: green;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.block-card-near .heart {
+  color: rgb(212, 212, 212);
+  z-index: 9999999;
+}
+.block-card-near .heart-selected {
+  color: red;
+  z-index: 9999999;
+}
+
+.block-card-near .heart,
+.block-card-near .heart-selected {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 21px;
+  height: 21px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  z-index: 9999999;
+}
+
+.block-card-near .label {
+  position: absolute;
+  background-color: white;
+  width: 80px;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 13px;
+  letter-spacing: 0.05rem;
+  left: 35px;
+  top: 35px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.block-card-near .label-none {
+  display: none;
+}
