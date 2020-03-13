@@ -57,7 +57,9 @@ const Block = ({ title, type, cookieAuth, arrIds, height }) => {
 
     const funcCities = async () => {
       try {
-        const response = await Axios.get("http://localhost:3400/search/cities");
+        const response = await Axios.get(
+          "https://happy-cow.herokuapp.com/search/cities"
+        );
         const arr = await funcCreateCitiesCards(response.data);
         setResult(arr);
         setIsLoading(false);
