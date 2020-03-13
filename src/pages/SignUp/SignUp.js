@@ -31,7 +31,7 @@ const SignUp = ({ user }) => {
     const sendData = async () => {
       try {
         const response = await Axios.post(
-          "http://localhost:3400/user/sign_up",
+          "https://happy-cow.herokuapp.com/user/sign_up",
           {
             email: mail,
             username: pseudo,

@@ -25,7 +25,7 @@ const Restaurant = ({ user }) => {
     const fetchData = async () => {
       try {
         const response = await Axios.get(
-          "http://localhost:3400/restaurant?id=" + restoId
+          "https://happy-cow.herokuapp.com/restaurant?id=" + restoId
         );
 
         // Set all other States

@@ -12,7 +12,7 @@ const ReviewList = ({ restoId }) => {
     const fetchDatas = async () => {
       try {
         const response = await Axios.get(
-          "http://localhost:3400/review/restaurant?id=" + restoId
+          "https://happy-cow.herokuapp.com/review/restaurant?id=" + restoId
         );
         const arr = await createReviewCards(response.data);
         setResult(arr);

@@ -17,7 +17,7 @@ const Block = ({ title, type, cookieAuth, arrIds, height }) => {
     const funcNear = async (city, premium, rating) => {
       try {
         const response = await Axios.get(
-          "http://localhost:3400/search?location=" +
+          "https://happy-cow.herokuapp.com/search?location=" +
             city +
             "&limit=15&vegan=1&vege=1&vo=1&premium=" +
             premium +

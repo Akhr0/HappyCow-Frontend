@@ -38,7 +38,7 @@ const Search = props => {
     const fetchData = async () => {
       try {
         const response = await Axios.get(
-          "http://localhost:3400/search?location=" +
+          "https://happy-cow.herokuapp.com/search?location=" +
             search +
             "&limit=" +
             limit +

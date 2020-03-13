@@ -47,7 +47,7 @@ const Edit = ({ user }) => {
         formData.append("email", email);
 
         const response = await Axios.post(
-          "http://localhost:3400/user/update",
+          "https://happy-cow.herokuapp.com/user/update",
           formData,
           {
             headers: {
@@ -87,11 +87,14 @@ const Edit = ({ user }) => {
     // Fetch datas
     const fetchDatas = async () => {
       try {
-        const response = await Axios.get("http://localhost:3400/user/profil", {
-          headers: {
-            Authorization: "Bearer " + user
+        const response = await Axios.get(
+          "https://happy-cow.herokuapp.com/user/profil",
+          {
+            headers: {
+              Authorization: "Bearer " + user
+            }
           }
-        });
+        );
         const r = response.data;
 
         setUsername(r.username);

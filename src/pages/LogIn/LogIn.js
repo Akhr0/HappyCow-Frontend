@@ -24,10 +24,13 @@ const LogIn = ({ setUser, user }) => {
     event.preventDefault();
     const sendData = async () => {
       try {
-        const response = await Axios.post("http://localhost:3400/user/log_in", {
-          email: mail,
-          password: password
-        });
+        const response = await Axios.post(
+          "https://happy-cow.herokuapp.com/user/log_in",
+          {
+            email: mail,
+            password: password
+          }
+        );
         if (response.data.token) {
           Cookies.set("_Auth", response.data.token, { expires: 4 });
           setUser(response.data.token);

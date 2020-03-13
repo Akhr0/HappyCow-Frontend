@@ -13,7 +13,7 @@ const ReviewCard = ({ title, text, user }) => {
     const fetchDatas = async () => {
       try {
         const response = await Axios.get(
-          "http://localhost:3400/user/simpleInfo?id=" + user
+          "https://happy-cow.herokuapp.com/user/simpleInfo?id=" + user
         );
         setResult(response.data);
         setIsLoading(false);

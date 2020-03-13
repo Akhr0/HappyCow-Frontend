@@ -39,11 +39,15 @@ const BlockCardNear = ({
       const formData = new FormData();
       formData.append("fav", fav);
       formData.append("id", id);
-      await Axios.post("http://localhost:3400/user/favoris", formData, {
-        headers: {
-          Authorization: "Bearer " + cookieAuth
+      await Axios.post(
+        "https://happy-cow.herokuapp.com/user/favoris",
+        formData,
+        {
+          headers: {
+            Authorization: "Bearer " + cookieAuth
+          }
         }
-      });
+      );
     } catch (error) {
       alert("Une erreur est survenue");
     }

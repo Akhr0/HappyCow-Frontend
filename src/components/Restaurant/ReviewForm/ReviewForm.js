@@ -17,7 +17,7 @@ const ReviewForm = ({ user, restoId }) => {
         formData.append("text", reviewWritten);
         formData.append("restaurant", restoId);
         await Axios.post(
-          "http://localhost:3400/restaurant/review/post",
+          "https://happy-cow.herokuapp.com/restaurant/review/post",
           formData,
           {
             headers: {

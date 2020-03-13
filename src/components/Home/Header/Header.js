@@ -17,11 +17,14 @@ const Header = ({ user, setUser }) => {
     // Fetch datas
     const fetchDatas = async () => {
       try {
-        const response = await Axios.get("http://localhost:3400/user/infos", {
-          headers: {
-            Authorization: "Bearer " + user
+        const response = await Axios.get(
+          "https://happy-cow.herokuapp.com/user/infos",
+          {
+            headers: {
+              Authorization: "Bearer " + user
+            }
           }
-        });
+        );
         setResult(response.data);
         setIsLoading(false);
       } catch (error) {

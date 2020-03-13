@@ -23,11 +23,14 @@ const Home = props => {
     // Fetch datas
     const fetchDatas = async () => {
       try {
-        const response = await Axios.get("http://localhost:3400/user/profil", {
-          headers: {
-            Authorization: "Bearer " + cookieAuth
+        const response = await Axios.get(
+          "https://happy-cow.herokuapp.com/user/profil",
+          {
+            headers: {
+              Authorization: "Bearer " + cookieAuth
+            }
           }
-        });
+        );
         setResult(response.data.favorites);
         setIsLoding(false);
       } catch (error) {
