@@ -4,11 +4,13 @@ import RatingStars from "../../Basics/RatingStars/RatingStars";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "../../Basics/Button/Button";
 
-const HeaderResto = ({ name, rating, type, premium }) => {
+const HeaderResto = ({ name, rating, type, premium, pictures }) => {
   return (
     <nav className="header-resto d-flex jcc w100">
       <div className="wrapper">
-        <div className="d-flex fdc">
+        <img src={pictures[0]} alt="header" />
+        <div className="black-filter"></div>
+        <div className="d-flex fdc header-infos">
           <h2>{name}</h2>
           <div className="d-flex aic">
             {premium === 1 ? (

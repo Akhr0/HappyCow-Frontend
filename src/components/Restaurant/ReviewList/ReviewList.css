@@ -1,0 +1,9 @@
+.review-list {
+  margin-top: 20px;
+}
+
+.review-list > h4 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}

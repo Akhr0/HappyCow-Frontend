@@ -26,7 +26,7 @@
 .log-in-card-top h3 {
   font-size: 2.4rem;
   font-weight: bold;
-  border-bottom: 3px solid #f56b2a;
+  border-bottom: 3px solid green;
   padding: 21px 0;
   text-align: center;
   width: 100%;
@@ -63,7 +63,7 @@
 }
 
 .log-in-card-top form .connect {
-  background-color: #4183d7;
+  background-color: green;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -87,11 +87,11 @@
 .log-in-card-bot button {
   height: 44px;
   width: 100%;
-  border: 1px solid #4183d7;
+  border: 1px solid green;
   border-radius: 5px;
   font-size: 1.6rem;
   font-weight: bold;
-  color: #4183d7;
+  color: green;
   cursor: pointer;
   outline: none;
 }

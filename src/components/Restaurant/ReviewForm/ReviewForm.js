@@ -63,7 +63,6 @@ const ReviewForm = ({ user, restoId }) => {
 
   return (
     <div className="review-form">
-      <h4>Reviews</h4>
       <form className="d-flex fdc aic w100 jss" onSubmit={handleSubmit}>
         <input
           type="text"

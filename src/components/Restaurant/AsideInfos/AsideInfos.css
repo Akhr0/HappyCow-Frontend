@@ -1,17 +1,34 @@
 .aside-infos {
-  width: 300px;
+  width: 100%;
   background-color: #f8f5f4;
+  border-radius: 10px;
+  padding: 0 0 20px 0;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.15);
 }
 
 .aside-infos h5,
 .aside-infos .price {
   font-weight: bold;
-  margin: 15px 20px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  margin-right: 7px;
 }
 
-.aside-infos > div > a {
+.aside-infos > div a {
   font-size: 1.4rem;
   color: green;
   text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.aside-infos .wrapper {
+  width: 100%;
+  padding: 15px 20px 0 20px;
+  box-sizing: border-box;
+}
+
+.aside-infos .wrapper > div {
+  margin: 30px 0;
 }

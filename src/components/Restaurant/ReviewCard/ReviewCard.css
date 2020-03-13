@@ -1,5 +1,51 @@
 .review-card {
   margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+.review-card .review-profil > img {
+  height: 60px;
+  border-radius: 34px;
+  padding: 2px;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-left: 1px #c4c4c4 solid;
+}
+
+.review-card .review-profil > div > span {
+  font-weight: bold;
+  color: green;
+  margin: 10px 0;
+}
+
+.review-card .review-profil > div > .icon-msg {
+  color: green;
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.review-card .review-profil > p > span {
+  font-weight: bold;
+}
+
+.review-card .review-profil > p {
+  margin-bottom: 10px;
+}
+
+.review-card .review-profil {
+  width: 20%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.review-card .review {
+  width: 80%;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .review-card .review > h4 {
@@ -8,7 +54,6 @@
   margin-bottom: 10px;
 }
 
-.review-card .review-profil img {
-  height: 60px;
-  border-radius: 30px;
+.review-card .review p {
+  line-height: 2rem;
 }

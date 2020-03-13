@@ -3,6 +3,7 @@ import Axios from "axios";
 import "./Home.css";
 import { useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
+import HeadImg from "../../assets/img/header.png";
 
 import Block from "../../components/Home/Block/Block";
 
@@ -44,7 +45,9 @@ const Home = props => {
 
   return (
     <main className="d-flex fdc jcc aic w100">
-      <div className="wave-container w100">
+      <img src={HeadImg} alt="header" className="img-home" />
+      {/* <div className="black-filter"></div> */}
+      <div className="search-nav w100">
         <h1>Find Vegan Restaurants Nearby</h1>
         <form
           className="d-flex jcc aic"
@@ -68,13 +71,6 @@ const Home = props => {
             className="search-btn out-none box-sz cpoint"
           />
         </form>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#008000"
-            fillOpacity="1"
-            d="M0,288L80,288C160,288,320,288,480,261.3C640,235,800,181,960,165.3C1120,149,1280,171,1360,181.3L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-          ></path>
-        </svg>
       </div>
       {isLoading ? null : (
         <div className="wrapper d-flex fdc jcc">

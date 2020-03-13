@@ -1,0 +1,108 @@
+.profil {
+  position: relative;
+}
+
+.profil > .wrapper-top,
+.profil > .wrapper-bot {
+  width: 60%;
+  height: 100%;
+}
+
+.profil h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* FIRST CARD */
+
+.profil > .wrapper-top > .first-card,
+.profil > .wrapper-top > .second-card,
+.profil > .wrapper-top > .third-card {
+  width: 31%;
+  margin: 30px 0 0 0;
+  border: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 10px;
+}
+
+.profil > .wrapper-top > .first-card > div,
+.profil > .wrapper-top > .third-card > div,
+.profil .wrapper-bot .fourth-card .left > div {
+  margin-bottom: 25px;
+}
+
+.profil .ref {
+  color: green;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* SECOND CARD */
+
+.profil > .wrapper-top > .second-card .avatar-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.profil > .wrapper-top > .second-card .avatar-wrap img {
+  width: 100%;
+  border-radius: 50%;
+}
+.profil > .wrapper-top > .second-card .icon-profil {
+  font-size: 3rem;
+  color: green;
+  position: absolute;
+  right: 10%;
+  top: 20%px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.profil .fourth-card {
+  margin-top: 40px;
+  width: 100%;
+  border: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 10px;
+}
+
+.profil .fourth-card .left,
+.profil .fourth-card .description {
+  width: 50%;
+  padding: 20px;
+}
+
+.profil .res {
+  line-height: 2.3rem;
+  text-transform: capitalize;
+}
+
+.profil .icon-profil {
+  color: green;
+  font-size: 2rem;
+  margin-right: 7px;
+}
+
+.profil .description > span:first-child {
+  margin-bottom: 15px;
+}
+
+.profil .wrapper-bot {
+  margin-bottom: 80px;
+}
+
+.profil .btn-profile {
+  position: absolute;
+  top: 30px;
+  right: 10%;
+}

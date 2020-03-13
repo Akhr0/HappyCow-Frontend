@@ -1,10 +1,14 @@
-.infos-resto > p {
-  margin: 30px 0;
+.infos-resto {
+  margin-top: 15px;
 }
 
-.infos-resto .icon {
-  font-size: 1.4rem;
-  color: green;
+.infos-resto > p {
+  margin: 20px 0;
+  line-height: 2rem;
+}
+
+.infos-resto .blocks {
+  margin-top: 20px;
 }
 
 .infos-resto > div:first-child {
@@ -12,7 +16,8 @@
   margin-bottom: 10px;
 }
 
-.infos-resto h4 {
-  margin-left: 5px;
-  color: #8b8b8b;
+.infos-resto > h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 10px;
 }

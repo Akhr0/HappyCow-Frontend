@@ -8,6 +8,8 @@ import InfosResto from "../../components/Restaurant/InfosResto/InfosResto";
 import AsideInfos from "../../components/Restaurant/AsideInfos/AsideInfos";
 import ReviewForm from "../../components/Restaurant/ReviewForm/ReviewForm";
 import ReviewList from "../../components/Restaurant/ReviewList/ReviewList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BlockInfo from "../../components/Restaurant/BlockInfo/BlockInfo";
 
 const Restaurant = ({ user }) => {
   //Creation of states
@@ -47,14 +49,15 @@ const Restaurant = ({ user }) => {
           <HeaderResto {...searchResto} />
           <div className="d-flex wrapper box-sz sbw">
             <div className="d-flex fdc box-sz left-side">
-              <InfosResto {...searchResto} />
+              <div className="d-flex">
+                <FontAwesomeIcon icon="home" className="icon" />
+                <h5>Europe</h5>
+              </div>
               <Carousel
-                width="95%"
-                height="240px"
+                width="100%"
                 slidesToShow={3}
                 transitionMode="scroll"
                 wrapAround
-                cellSpacing={10}
                 pauseOnHover
                 renderBottomCenterControls={() => null}
                 className="carousel"
@@ -70,10 +73,30 @@ const Restaurant = ({ user }) => {
                   );
                 })}
               </Carousel>
+              <InfosResto {...searchResto} />
               <ReviewList restoId={restoId} />
               <ReviewForm user={user} restoId={restoId} />
             </div>
-            <AsideInfos {...searchResto} />
+            <div className="right-side">
+              <AsideInfos {...searchResto} />
+              <div className="d-flex fdc right-blocks">
+                <BlockInfo
+                  title="Open Now"
+                  content="10:00 - 22:00"
+                  icon="clock"
+                />
+                <BlockInfo
+                  title="Contact"
+                  content={searchResto.phone}
+                  icon="phone-alt"
+                />
+                <BlockInfo
+                  title="Find"
+                  content={searchResto.adress}
+                  icon="map-marker-alt"
+                />
+              </div>
+            </div>
           </div>
         </>
       )}

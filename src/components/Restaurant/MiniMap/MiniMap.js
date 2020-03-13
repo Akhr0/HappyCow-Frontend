@@ -12,7 +12,8 @@ const MiniMap = props => {
         id="mini-map"
         mapContainerStyle={{
           height: "200px",
-          width: "100%"
+          width: "100%",
+          borderRadius: "10px"
         }}
         zoom={13}
         center={{ lat: 48.866667, lng: 2.333333 }}

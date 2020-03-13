@@ -1,3 +1,8 @@
+main {
+  position: relative;
+  padding-bottom: 50px;
+}
+
 main .search-txt {
   height: 50px;
   width: 40%;
@@ -16,6 +21,7 @@ main h1 {
   text-align: center;
   margin-top: 60px;
   z-index: 99;
+  color: white;
 }
 
 main .search-btn {
@@ -34,28 +40,27 @@ main form {
   width: 100%;
 }
 
-@keyframes animateWave {
-  0% {
-    transform: scale(1, 0);
-  }
-  100% {
-    transform: scale(1, 1.2);
-  }
-}
-
-main .wave-container {
-  position: relative;
-  color: #fff;
-  text-align: center;
-}
-
-main .wave-container > svg {
-  display: block;
-  transform-origin: top;
-  animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
-
 main .wrapper {
-  width: 55%;
+  width: 65%;
   margin-top: 60px;
+}
+
+main .img-home {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -3;
+}
+
+main > .black-filter {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+main .search-nav {
+  position: absolute;
+  top: 25px;
 }

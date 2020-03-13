@@ -1,0 +1,72 @@
+.edit .edit-card {
+  margin-top: 40px;
+  width: 30%;
+  border: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 80px;
+}
+
+.edit .lign {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.edit .lign .ref {
+  font-size: 1.6rem;
+  font-weight: Bold;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.edit .lign .res {
+  border-radius: 10px;
+  font-size: 1.4rem;
+  width: 100%;
+  border: solid 1px #c4c4c4;
+  box-sizing: border-box;
+}
+
+.edit .lign input,
+.edit .lign select {
+  height: 50px;
+  padding: 0 15px;
+}
+
+.edit .lign textarea {
+  height: 80px;
+  padding: 15px;
+}
+
+.edit button {
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  color: green;
+  cursor: pointer;
+}
+
+.edit .wrong-txt {
+  color: rgb(200, 0, 0);
+  border: 1px solid rgb(200, 0, 0);
+}
+
+.edit .good-txt {
+  color: green;
+  border: 1px solid green;
+}
+
+.edit .wrong-txt,
+.edit .good-txt {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}

@@ -1,0 +1,15 @@
+.btn-status {
+  height: 40px;
+  border-radius: 7px;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.btn-status > img {
+  height: 25px;
+  margin-right: 5px;
+}

@@ -1,5 +1,7 @@
 header {
   height: 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 header .wrapper {
   margin: 0 50px;
@@ -51,6 +53,7 @@ header .account .menu-list {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   z-index: 9999999;
 }
 

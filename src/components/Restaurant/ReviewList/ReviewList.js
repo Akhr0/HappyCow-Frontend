@@ -34,6 +34,7 @@ const ReviewList = ({ restoId }) => {
   }, [restoId]);
   return (
     <div className="review-list">
+      {isLoading ? null : <h4>{result.length + " Reviews"}</h4>}
       {isLoading ? "Reviews are loading" : result}
     </div>
   );

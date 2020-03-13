@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css";
 import Axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
 
 const SignUp = ({ user }) => {
@@ -107,42 +106,6 @@ const SignUp = ({ user }) => {
   return (
     <div className="sign-up">
       <div className="sign-card">
-        <div className="sign-card-left">
-          <h2>Pourquoi créer un compte ?</h2>
-          <ul>
-            <li>
-              <FontAwesomeIcon icon="clock" className="icon-clock" />
-              <div>
-                <h3>Gagnez du temps</h3>
-                <p>
-                  Publiez vos annonces rapidement, avec vos informations
-                  pré-remplies chaque fois que vous souhaitez déposer une
-                  nouvelle annonce.
-                </p>
-              </div>
-            </li>
-            <li>
-              <FontAwesomeIcon icon="bell" className="icon-bell" />
-              <div>
-                <h3>Soyez les premiers informés</h3>
-                <p>
-                  Créez des alertes Immo ou Emploi et ne manquez jamais
-                  l’annonce qui vous intéresse.
-                </p>
-              </div>
-            </li>
-            <li>
-              <FontAwesomeIcon icon="eye" className="icon-eye" />
-              <div>
-                <h3>Visibilité</h3>
-                <p>
-                  Suivez les statistiques de vos annonces (nombre de fois où
-                  votre annonce a été vue, nombre de contacts reçus).
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
         <div className="sign-card-right">
           <div className="wrapper-title">
             <h3>Create an account</h3>

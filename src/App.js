@@ -9,6 +9,7 @@ import Restaurant from "./pages/Restaurant/Restaurant";
 import SignUp from "./pages/SignUp/SignUp";
 import LogIn from "./pages/LogIn/LogIn";
 import Profil from "./pages/Profil/Profil";
+import Edit from "./pages/Edit/Edit";
 import Cookies from "js-cookie";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -22,7 +23,16 @@ import {
   faBell,
   faEye,
   faChevronDown,
-  faEnvelope
+  faEnvelope,
+  faCameraRetro,
+  faUser,
+  faCarrot,
+  faTrophy,
+  faUserFriends,
+  faUsers,
+  faPastafarianism,
+  faBirthdayCake,
+  faPrayingHands
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faDollarSign,
@@ -35,7 +45,16 @@ library.add(
   faBell,
   faEye,
   faChevronDown,
-  faEnvelope
+  faEnvelope,
+  faCameraRetro,
+  faUser,
+  faCarrot,
+  faTrophy,
+  faUserFriends,
+  faUsers,
+  faPastafarianism,
+  faBirthdayCake,
+  faPrayingHands
 );
 
 function App() {
@@ -61,6 +80,9 @@ function App() {
         </Route>
         <Route exact path="/profil">
           <Profil user={user} />
+        </Route>
+        <Route exact path="/edit">
+          <Edit user={user} />
         </Route>
         <Route exact path="/search/:search/:page?">
           <Search />

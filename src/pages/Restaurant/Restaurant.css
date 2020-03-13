@@ -5,21 +5,48 @@
   border-radius: 10px;
   background-color: rgb(29, 29, 29);
   outline: none;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  transform: scale(0.89, 0.89);
+  transform-origin: center;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.15);
 }
 
-.restaurant .slide:focus {
-  outline: none;
-}
-
-.restaurant .carousel {
-  outline: none;
+.restaurant .slide:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transform: scale(0.92, 0.92);
+  transform-origin: center;
 }
 
 .restaurant .wrapper {
   width: 1100px;
+  position: relative;
 }
 
 .restaurant .left-side {
   width: 800px;
   margin-right: 40px;
+  margin-top: 20px;
+}
+
+.restaurant .icon {
+  font-size: 1.4rem;
+  color: green;
+}
+
+.restaurant .wrapper .left-side div > h5 {
+  margin-left: 5px;
+  margin-bottom: 5px;
+  color: #8b8b8b;
+}
+
+.restaurant .right-blocks {
+  margin-top: 20px;
+}
+
+.restaurant .right-side {
+  width: 250px;
+  position: absolute;
+  top: -30px;
+  right: 20px;
 }

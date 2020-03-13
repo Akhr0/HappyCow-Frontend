@@ -62,7 +62,13 @@ const Header = ({ user, setUser }) => {
                     className="icon-chevron"
                   />
                   <div className="menu-list">
-                    <span>My profile</span>
+                    <span
+                      onClick={() => {
+                        history.push("/profil");
+                      }}
+                    >
+                      My profile
+                    </span>
                     <span>Messages</span>
                     <span
                       onClick={() => {

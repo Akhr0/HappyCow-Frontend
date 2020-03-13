@@ -14,13 +14,15 @@ const Block = ({ title, type, cookieAuth, arrIds, height }) => {
   const history = useHistory();
 
   useEffect(() => {
-    const funcNear = async (city, premium) => {
+    const funcNear = async (city, premium, rating) => {
       try {
         const response = await Axios.get(
           "http://localhost:3400/search?location=" +
             city +
             "&limit=15&vegan=1&vege=1&vo=1&premium=" +
-            premium
+            premium +
+            "&rating=" +
+            rating
         );
         const arr = await funcCreateNearCards(response.data.result.restaurants);
         setResult(arr);
@@ -69,10 +71,10 @@ const Block = ({ title, type, cookieAuth, arrIds, height }) => {
 
     switch (type) {
       case "near":
-        funcNear("paris", 1);
+        funcNear("paris", 1, 0);
         break;
       case "best":
-        funcNear("paris", 0);
+        funcNear("paris", 0, 1);
         setBest(1);
         break;
       case "cities":
